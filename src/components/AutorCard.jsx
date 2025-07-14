@@ -3,7 +3,7 @@ import axios from 'axios';
 function AutorCard({ autor, setAutorEditando, cargarAutores }) {
   const eliminar = async () => {
     if (window.confirm('¿Eliminar autor?')) {
-      await axios.delete(`https://autores-yopl.onrender.com/${autor.id}`);
+      await axios.delete(`https://autores-yopl.onrender.com/api/autores/${autor.id}`);
       cargarAutores();
     }
   };

@@ -18,7 +18,7 @@ function AutorForm({ autorEditando, cargarAutores }) {
     e.preventDefault();
 
     if (autorEditando) {
-      await axios.put(`https://autores-yopl.onrender.com/${autorEditando.id}`, {
+      await axios.put(`https://autores-yopl.onrender.com/api/autores/${autorEditando.id}`, {
         nombre,
         biografia,
         imagenUrl: autorEditando.imagenUrl
@@ -28,7 +28,7 @@ function AutorForm({ autorEditando, cargarAutores }) {
       data.append('nombre', nombre);
       data.append('biografia', biografia);
       data.append('imagen', imagen);
-      await axios.post('https://autores-yopl.onrender.com/', data);
+      await axios.post('https://autores-yopl.onrender.com/api/autores', data);
     }
 
     alert(autorEditando ? 'Autor actualizado' : 'Autor creado con éxito');

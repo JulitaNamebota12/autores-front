@@ -9,7 +9,7 @@ function App() {
   const [autorEditando, setAutorEditando] = useState(null);
 
   const cargarAutores = async () => {
-    const res = await axios.get('http://localhost:8080/api/autores');
+    const res = await axios.get('https://autores-yopl.onrender.com/');
     setAutores(res.data);
   };
 
